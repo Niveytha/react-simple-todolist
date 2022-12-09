@@ -56,6 +56,8 @@ function OverviewBox(props) {
 
 function CatFactBox() {
   const [catFact, setCatFact] = useState("Loading cat fact...");
+  const [showCatToggle, setShowCatToggle] = useState(false);
+
   useEffect(() => {
     fetch("https://catfact.ninja/fact")
       .then((response) => response.json())
@@ -67,6 +69,12 @@ function CatFactBox() {
     <div className="HeaderBox">
       <h2>Cat Fact of the Day</h2>
       <p>{catFact}</p>
+      <button onClick={() => setShowCatToggle(!showCatToggle)}>
+        {showCatToggle ? "Hide" : "Show"} cat
+      </button>
+      <div style={{ marginTop: 20 }}>
+        {showCatToggle && <img src={"https://placekitten.com/150/100"} />}
+      </div>
     </div>
   );
 }
