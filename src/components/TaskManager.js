@@ -82,6 +82,14 @@ function TaskList(props) {
     setTasks(newTasks);
   }
 
+  function handleDeleteTask(toDeleteTask, toDeleteTaskIndex) {
+    const newTasks = [
+      ...tasks.slice(0, toDeleteTaskIndex),
+      ...tasks.slice(toDeleteTaskIndex + 1),
+    ];
+    setTasks(newTasks);
+  }
+
   return (
     <table style={{ margin: "0 auto", width: "100%" }}>
       <thead>
@@ -106,10 +114,16 @@ function TaskList(props) {
                 onChange={() => handleTaskCompletionToggled(task, index)}
               />
             </td>
+            <td>
+              <button onClick={() => handleDeleteTask(task, index)}>
+                Delete
+              </button>
+            </td>
           </tr>
         ))}
       </tbody>
     </table>
   );
 }
+
 export default TaskManager;
