@@ -23,7 +23,10 @@ function OverviewBox(props) {
     setName(savedName ?? "John Doe");
   }, []);
 
-  const tasksLength = tasks.filter((tasks) => !tasks.isComplete).length;
+  const incompleteTasksLength = tasks.filter(
+    (tasks) => !tasks.isComplete
+  ).length;
+  const totalTasksLength = tasks.length;
 
   return (
     <div className="HeaderBox">
@@ -45,10 +48,11 @@ function OverviewBox(props) {
       <p>
         You have{" "}
         <strong>
-          {tasksLength} task{tasksLength === 1 ? "" : "s"}
+          {incompleteTasksLength} of {totalTasksLength} task
+          {totalTasksLength === 1 ? "" : "s"}
         </strong>{" "}
-        that {tasksLength === 1 ? "is" : "are"} not complete.{" "}
-        {tasksLength === 0 ? "Good job!" : ""}
+        that {totalTasksLength === 1 ? "is" : "are"} not complete.{" "}
+        {totalTasksLength === 0 ? "Good job!" : ""}
       </p>
     </div>
   );
