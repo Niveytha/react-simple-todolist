@@ -8,11 +8,13 @@ This repository contains a simple todo list application built with React. The ap
 - CSS
 
 ## How to Run the Application
-- Clone the repository to your local machine.
-- Navigate to the project directory.
-- Install dependencies by running npm install.
-- Start the development server by running npm start.
-- Open the application in your web browser by visiting http://localhost:3000/.
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install dependencies by running npm install.
+4. Start the development server by running npm start.
+5. Open the application in your web browser by visiting http://localhost:3000/.
+
+You can also view the live version of the app at https://react-simple-todolist.vercel.app/
 
 ## Features
 ### Added Features
